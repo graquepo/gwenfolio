@@ -1,0 +1,220 @@
+::-moz-selection { /* Code for Firefox */
+    color: red;
+    background: yellow;
+  }
+  
+  ::selection {
+    color: black;
+    background: #E87386;
+  }
+
+.playwrite-de-la-ware {
+    font-family: "Playwrite DE LA", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #E87386;
+    font-size: 25px;
+    margin-bottom: 5%;
+}
+
+.playwrite-at {
+    font-family: "Playwrite AT", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0px;
+  }
+
+
+body {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    background-color: #f1ebe1;
+}
+
+/* index */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 20%;
+    color: #F4B5C7;
+}
+
+.background-color{
+    background-color: #f1ebe1
+}
+
+.animation{
+    animation: fadeout 2s linear 1 forwards;
+}
+
+@keyframes fadeout {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+/* main */
+/* nav */
+
+.sidenav {
+    height: 100%;
+    width: 14%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #44624a;
+    padding-top: 6.5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+    overflow-x: hidden;
+    scrollbar-color:   #44624a #F4B5C7;
+    scrollbar-width: thin;
+}
+
+.sidenav div{
+    margin-bottom: 20px;
+
+}
+
+.sidenav a{
+    color: 	#E7989F;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 5%;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+    
+  }
+  
+.links  {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: flex-end;
+    color: #8ba888;
+}
+
+/* text paragraphs */
+
+.headers{
+    color: #44624a;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.text-container{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+.about-me-txt{
+    width: 60%;
+    background-color: rgba(231, 152, 159, 0.4);
+    padding: 40px;
+    color: #44624a;
+    font-weight: 100;
+    border-style: dashed;
+}
+
+.rounded-pill{
+    border-radius: 50em;
+    background-color: #8ba888;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #f1ebe1;
+}
+
+small{
+    font-size: 0.7em;
+}
+
+.float-end{
+    float: right;
+}
+
+.experience-txt{
+    width: 65%;
+    background-color: rgba(231, 152, 159, 0.4);
+    padding: 25px;
+    color: #44624a;
+    font-weight: 100;
+    border-style: dashed;
+    font-size: 20px;
+}
+/* gwen name */
+/* text hover effect by parkHJ11 */
+.gwen {
+    font-family: "Playwrite AT", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0; 
+    padding: 0;
+    position:absolute;
+    top: 50%; left: 50%;
+    transform:translate(-50%,-50%);
+    font-size: 4em; color:transparent;
+    text-transform:uppercase;
+    }
+    .gwen span:nth-child(1){
+    position:absolute;
+    top:0; left:0; 
+    color: #F4B5C7;
+    transition:0.5s;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    overflow:hidden;
+    }
+    .gwen:hover span:nth-child(1){
+    transform:translateY(-18px); 
+    }
+    .gwen span:nth-child(2){
+    position:absolute;
+    top:0; left:0; color: #F4B5C7;
+    transition:0.5s;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    overflow:hidden;
+    }
+    .gwen:hover span:nth-child(2){
+    transform:translateY(20px); 
+    }
+    .gwen span:nth-child(3){
+    font-family: "Figtree", sans-serif;
+    position:absolute;
+    top:50%; 
+    left: 0;
+    transform:translateY(-50%) scaleY(0);
+    width: 96%; color: #F4B5C7;
+    font-size: 0.25em; 
+    font-weight: 500;
+    letter-spacing:0.5em;
+    text-align:center;
+    padding-left: 20px; 
+    margin-left: 5px;
+    transition:0.5s;
+    background-color: #44624a;
+    font-size: 25px;
+    }
+    .gwen:hover span:nth-child(3){
+    transform:translateY(-50%) scaleY(1);
+    }
+
+    .footer{
+        position: fixed;
+        left: 1;
+        bottom:0;
+        font-size: 10px;
+        color: #f1ebe1;
+    }
