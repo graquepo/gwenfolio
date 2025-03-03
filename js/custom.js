@@ -57,4 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
 //             loadPage(url, direction);
 //         });
 //     });
-// });
