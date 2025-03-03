@@ -245,6 +245,22 @@ small{
         transform: translateX(100%);
     }
 
+    #about {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    #experience {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    #project {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    #contact {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
     #content {
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
