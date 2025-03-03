@@ -37,7 +37,7 @@ function fadeIn(){
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
 
-    function loadPage(url, direction = 'right') {
+    function loadPage(url, direction = 'left') {
         content.classList.add(`hidden-${direction}`);
         setTimeout(() => {
             fetch(url)
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     content.innerHTML = html;
                     content.className = '';
                 });
-        }, 500);
+        }, 3000);
     }
 
     document.querySelectorAll('a').forEach(link => {
