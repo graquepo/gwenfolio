@@ -12,7 +12,7 @@ function fadeIn(){
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
 
-    function loadPage(url, transitionClass = 'fading') {
+    function loadPage(url, transitionClass = 'hidden-fade-slide') {
         content.classList.add(transitionClass);
         setTimeout(() => {
             fetch(url)
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', event => {
             event.preventDefault();
             const url = link.getAttribute('href');
-            const transitionClass = link.dataset.transition || 'fading';
+            const transitionClass = 'hidden-fade-slide';
             loadPage(url, transitionClass);
         });
     });
