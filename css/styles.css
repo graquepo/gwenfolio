@@ -8,14 +8,19 @@
     background: #E87386;
   }
 
-.playwrite-de-la-ware {
+.sidenav-name {
     font-family: "Playwrite DE LA", cursive;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    color: #E87386;
     font-size: 25px;
     margin-bottom: 5%;
+    text-decoration: none;
+}
+
+.sidenav-name a{
+    text-decoration: none;
+    color: #E87386;
 }
 
 .playwrite-at {
@@ -86,7 +91,7 @@ body {
 
 }
 
-.sidenav a{
+.sidenav .links a{
     color: 	#E7989F;
     text-decoration: none;
     font-size: 20px;
@@ -126,6 +131,7 @@ body {
     color: #44624a;
     font-weight: 100;
     border-style: dashed;
+    font-size: 17px;
 }
 
 .rounded-pill{
@@ -145,6 +151,10 @@ small{
     float: right;
 }
 
+.experience-txt .text-par h4 a{
+    text-decoration: none;
+}
+
 .experience-txt{
     width: 65%;
     background-color: rgba(231, 152, 159, 0.4);
@@ -154,6 +164,17 @@ small{
     border-style: dashed;
     font-size: 20px;
 }
+
+.contact-txt{
+    width: 100%;
+    background-color: rgba(231, 152, 159, 0.4);
+    padding: 30px;
+    color: #44624a;
+    font-weight: 100;
+    border-style: dashed;
+    font-size: 20px;
+}
+
 /* gwen name */
 /* text hover effect by parkHJ11 */
 .gwen {
@@ -217,4 +238,13 @@ small{
         bottom:0;
         font-size: 10px;
         color: #f1ebe1;
+    }
+
+    .hidden-fade-slide {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    #content {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
