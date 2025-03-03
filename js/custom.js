@@ -11,7 +11,7 @@ function fadeIn(){
 
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
-    console.log(content.innerHTML);
+    
     function loadPage(url, transitionClass = 'hidden-fade-slide') {
         content.classList.add(transitionClass);
         setTimeout(() => {
@@ -19,21 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.text())
                 .then(html => {
                     content.innerHTML = html;
-                    console.log(content.innerHTML);
-                    content.className = '';
-                });
+                    content.classList.remove(transitionClass);
+                })
+                .catch(error => console.error('Error loading page:', error));
         }, 500);
     }
 
-    document.querySelectorAll('a').forEach(link => {
+    document.querySelectorAll('a[data-transition]').forEach(link => {
         link.addEventListener('click', event => {
             event.preventDefault();
             const url = link.getAttribute('href');
-            const transitionClass = 'hidden-fade-slide';
-            loadPage(url, transitionClass);
+            loadPage(url);
+            history.pushState({ url }, "", url);
         });
     });
+
+    window.addEventListener('popstate', event => {
+        if (event.state && event.state.url) {
+            loadPage(event.state.url);
+        }
+    });
 });
+
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     const content = document.getElementById('content');
