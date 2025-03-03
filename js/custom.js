@@ -11,7 +11,7 @@ function fadeIn(){
 
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
-
+    console.log(content.innerHTML);
     function loadPage(url, transitionClass = 'hidden-fade-slide') {
         content.classList.add(transitionClass);
         setTimeout(() => {
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.text())
                 .then(html => {
                     content.innerHTML = html;
+                    console.log(content.innerHTML);
                     content.className = '';
                 });
         }, 500);

@@ -276,3 +276,18 @@ small{
     .fading{
         animation: fadeout 1s linear 1 forwards;
     }
+
+    .floating-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2em;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+      }
+      
+      .floating-text.visible {
+        opacity: 1;
+        top: 20%;
+      }
