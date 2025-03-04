@@ -8,7 +8,30 @@ function fadeIn(){
     } , 3000) 
 
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById('container');
 
+    function loadPage(url, transitionClass = 'hidden-fade-slide') {
+                container.classList.add(transitionClass);
+                setTimeout(() => {
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            container.innerHTML = html;
+                            container.className = '';
+                        });
+                }, 500);
+            }
+
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const url = link.getAttribute('href');
+            const transitionClass = link.dataset.transition || 'hidden-fade-slide';
+            loadPage(url, transitionClass);
+        });
+    });
+});
 // document.addEventListener('DOMContentLoaded', () => {
 //     const content = document.getElementById('content');
 

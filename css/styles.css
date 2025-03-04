@@ -1,6 +1,6 @@
 ::-moz-selection { /* Code for Firefox */
-    color: red;
-    background: yellow;
+    color: black;
+    background: #E87386;
   }
   
   ::selection {
@@ -13,7 +13,7 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: 25px;
+    font-size: 27.4px;
     margin-bottom: 5%;
     text-decoration: none;
 }
@@ -78,6 +78,7 @@ body {
     top: 0;
     left: 0;
     background-color: #44624a;
+    /* background-image: linear-gradient(to bottom right, #44624a, #7f987c); */
     padding-top: 6.5%;
     padding-left: 3.5%;
     padding-right: 3.5%;
@@ -97,6 +98,7 @@ body {
     font-size: 20px;
     margin-left: 5%;
 }
+
 .sidenav a:hover {
     color: #f1f1f1;
     
@@ -116,7 +118,25 @@ body {
     color: #44624a;
     font-size: 50px;
     margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
 }
+
+.headers::before {
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 60%;
+    top: 20px;
+    right: -5px;
+    background: #6c786e4b;
+    outline: 2.8px solid #1d1414ba;
+    padding: 1px 14px;
+    outline-offset: 7px;
+    z-index: -1;
+  }
+
+/*   */
 
 .text-container{
     position: absolute;
@@ -261,7 +281,7 @@ small{
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     } */
 
-    #content {
+    #container {
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
     
@@ -293,3 +313,36 @@ small{
     html{
         cursor: none;
     }
+
+    html a{
+        cursor: none;
+    }
+
+    .navlink a{
+        position: relative;
+        outline: none !important;
+        transition: 0.2s;
+    }
+    
+    .navlink a::after {
+        content: "";
+        background-color: #f1f1f1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        transition: 0.2s;
+    }
+    
+    .navlink a:hover,
+    .navlink a:focus {
+        color: #f1f1f1;
+    }
+    
+    .navlink a:hover::after,
+    .navlink a:focus::after {
+        background-color: #f1f1f1;
+        width: 100%;
+    }
+    
