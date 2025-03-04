@@ -8,33 +8,64 @@ function fadeIn(){
     } , 3000) 
 
 }
+// document.addEventListener("DOMContentLoaded", function () {
+//     const container = document.getElementById('container');
+
+//     function loadPage(url, transitionClass = 'hidden-fade-slide') {
+//                 container.classList.add(transitionClass);
+//                 setTimeout(() => {
+//                     fetch(url)
+//                         .then(response => response.text())
+//                         .then(containerr => {
+//                             container.innerHTML = containerr;
+//                             console.log(containerr);
+//                             container.removeAttribute('class');
+//                             container.className = '';
+//                         });
+//                 }, 800);
+//             }
+            
+//     document.querySelectorAll('.links a').forEach(link => {
+//         link.addEventListener('click', event => {
+//             event.preventDefault();
+//             const url = link.getAttribute('href');
+//             console.log(url);
+//             const transitionClass = link.dataset.transition || 'hidden-fade-slide';
+//             loadPage(url, transitionClass);
+//         });
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('container');
 
     function loadPage(url, transitionClass = 'hidden-fade-slide') {
-                container.classList.add(transitionClass);
-                setTimeout(() => {
-                    fetch(url)
-                        .then(response => response.text())
-                        .then(containerr => {
-                            container.innerHTML = containerr;
-                            console.log(containerr);
-                            container.removeAttribute('class');
-                            container.className = '';
-                        });
-                }, 800);
-            }
+        container.classList.add(transitionClass);
+        setTimeout(() => {
+            fetch(url)
+                .then(response => response.text())
+                .then(content => {
+                    container.innerHTML = content;
+                    container.classList.remove(transitionClass);
+                    attachLinkListeners(); // Rebind event listeners to new links
+                });
+        }, 800);
+    }
 
-    document.querySelectorAll('.links a').forEach(link => {
-        link.addEventListener('click', event => {
-            event.preventDefault();
-            const url = link.getAttribute('href');
-            console.log(url);
-            const transitionClass = link.dataset.transition || 'hidden-fade-slide';
-            loadPage(url, transitionClass);
+    function attachLinkListeners() {
+        document.querySelectorAll('.links a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const url = link.getAttribute('href');
+                const transitionClass = link.dataset.transition || 'hidden-fade-slide';
+                loadPage(url, transitionClass);
+            });
         });
-    });
+    }
+
+    attachLinkListeners(); // Bind events on initial page load
 });
+
 // document.addEventListener('DOMContentLoaded', () => {
 //     const content = document.getElementById('content');
 
