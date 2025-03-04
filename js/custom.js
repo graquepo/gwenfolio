@@ -16,17 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(() => {
                     fetch(url)
                         .then(response => response.text())
-                        .then(html => {
-                            container.innerHTML = html;
+                        .then(containerr => {
+                            container.innerHTML = containerr;
+                            console.log(containerr);
+                            container.removeAttribute('class');
                             container.className = '';
                         });
-                }, 500);
+                }, 800);
             }
 
-    document.querySelectorAll('a').forEach(link => {
+    document.querySelectorAll('.links a').forEach(link => {
         link.addEventListener('click', event => {
             event.preventDefault();
             const url = link.getAttribute('href');
+            console.log(url);
             const transitionClass = link.dataset.transition || 'hidden-fade-slide';
             loadPage(url, transitionClass);
         });
