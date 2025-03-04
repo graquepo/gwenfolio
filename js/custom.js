@@ -9,38 +9,30 @@ function fadeIn(){
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const content = document.getElementById('content');
-    
-    function loadPage(url, transitionClass = 'hidden-fade-slide') {
-        content.classList.add(transitionClass);
-        setTimeout(() => {
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
-                    content.innerHTML = html;
-                    content.classList.remove(transitionClass);
-                })
-                .catch(error => console.error('Error loading page:', error));
-        }, 500);
-    }
+// document.addEventListener('DOMContentLoaded', () => {
+//     const content = document.getElementById('content');
 
-    document.querySelectorAll('a[data-transition]').forEach(link => {
-        link.addEventListener('click', event => {
-            event.preventDefault();
-            const url = link.getAttribute('href');
-            loadPage(url);
-            history.pushState({ url }, "", url);
-        });
-    });
+//     function loadPage(url, transitionClass = 'hidden-fade-slide') {
+//         content.classList.add(transitionClass);
+//         setTimeout(() => {
+//             fetch(url)
+//                 .then(response => response.text())
+//                 .then(html => {
+//                     content.innerHTML = html;
+//                     content.className = '';
+//                 });
+//         }, 500);
+//     }
 
-    window.addEventListener('popstate', event => {
-        if (event.state && event.state.url) {
-            loadPage(event.state.url);
-        }
-    });
-});
-
+//     document.querySelectorAll('a').forEach(link => {
+//         link.addEventListener('click', event => {
+//             event.preventDefault();
+//             const url = link.getAttribute('href');
+//             const transitionClass = link.dataset.transition || 'hidden-fade-slide';
+//             loadPage(url, transitionClass);
+//         });
+//     });
+// });
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     const content = document.getElementById('content');
@@ -65,3 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
 //             loadPage(url, direction);
 //         });
 //     });
+document.addEventListener("DOMContentLoaded", function () {
+    const cursorTag = document.querySelector("div.cursors");
+    
+    if (!cursorTag) return; 
+
+    const ball = cursorTag.querySelector("div");
+    if (!ball) return;
+
+    document.addEventListener("mousemove", function (event) {
+        ball.style.left = event.pageX + "px";
+        ball.style.top = event.pageY + "px";
+    });
+});

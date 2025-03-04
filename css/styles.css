@@ -245,7 +245,7 @@ small{
         transform: translateX(100%);
     }
 
-    #about {
+    /* #about {
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
 
@@ -259,13 +259,13 @@ small{
 
     #contact {
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
+    } */
 
     #content {
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
     
-    .hidden-left {
+    /* .hidden-left {
         transform: translateX(-100%);
     }
     
@@ -275,19 +275,21 @@ small{
 
     .fading{
         animation: fadeout 1s linear 1 forwards;
+    } */
+
+    div.cursors div{
+        position:absolute;
+        top: -100px;
+        left: -100px;
+        width: 15px;
+        height: 15px;
+        background-color: #E87386;
+        border-radius: 500px;
+        z-index: 10000;
+        pointer-events: none;
+        cursor: none;
     }
 
-    .floating-text {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2em;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
-      }
-      
-      .floating-text.visible {
-        opacity: 1;
-        top: 20%;
-      }
+    html{
+        cursor: none;
+    }
