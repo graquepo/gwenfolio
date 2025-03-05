@@ -266,7 +266,6 @@ small{
 
     .hidden-fade-slide {
         opacity: 0;
-        transform: translateX(100%);
     }
 
     /* #about {
