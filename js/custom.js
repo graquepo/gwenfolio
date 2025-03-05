@@ -35,19 +35,19 @@ function fadeIn(){
 //         });
 //     });
 // });
-
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('container');
 
     function loadPage(url, transitionClass = 'hidden-fade-slide') {
-        container.classList.add(transitionClass);
+        container.classList.add(transitionClass); // Add hidden-fade-slide effect
         setTimeout(() => {
             fetch(url)
                 .then(response => response.text())
                 .then(content => {
                     container.innerHTML = content;
-                    container.classList.remove(transitionClass);
-                    attachLinkListeners(); // Rebind event listeners to new links
+                    console.log(content);
+                    container.classList.remove(transitionClass); // Remove effect after load
+                    attachLinkListeners(); // Rebind events
                 });
         }, 800);
     }
@@ -65,6 +65,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     attachLinkListeners(); // Bind events on initial page load
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const container = document.getElementById('container');
+//     const sidenav = document.getElementsByClassName('sidenav');
+
+//     function loadPage(url, transitionClass = 'hidden-fade-slide') {
+//         container.classList.add(transitionClass);
+//         setTimeout(() => {
+//             fetch(url)
+//                 .then(response => response.text())
+//                 .then(content => {
+//                     container.innerHTML = content;
+//                     container.classList.remove(transitionClass);
+//                     console.log(sidenav);
+//                     // sidenav.style.opacity = '0';
+//                     attachLinkListeners(); // Rebind event listeners to new links
+//                 });
+//         }, 800);
+//     }
+
+//     function attachLinkListeners() {
+//         document.querySelectorAll('.links a').forEach(link => {
+//             link.addEventListener('click', event => {
+//                 event.preventDefault();
+//                 const url = link.getAttribute('href');
+//                 const transitionClass = link.dataset.transition || 'hidden-fade-slide';
+//                 loadPage(url, transitionClass);
+//             });
+//         });
+//     }
+
+//     attachLinkListeners(); // Bind events on initial page load
+// });
+//
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     const content = document.getElementById('content');
